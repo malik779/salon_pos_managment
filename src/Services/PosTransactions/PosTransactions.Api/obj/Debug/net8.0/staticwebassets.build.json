@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IrHoqWffshPIB0mXQ9v4Gd8t2YoQEaF7Eo49cChj0tA=",
+  "Source": "PosTransactions.Api",
+  "BasePath": "_content/PosTransactions.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

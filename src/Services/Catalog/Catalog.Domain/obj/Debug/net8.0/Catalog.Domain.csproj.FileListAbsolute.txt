@@ -1,0 +1,16 @@
+/workspace/src/Services/Catalog/Catalog.Domain/bin/Debug/net8.0/Catalog.Domain.deps.json
+/workspace/src/Services/Catalog/Catalog.Domain/bin/Debug/net8.0/Catalog.Domain.dll
+/workspace/src/Services/Catalog/Catalog.Domain/bin/Debug/net8.0/Catalog.Domain.pdb
+/workspace/src/Services/Catalog/Catalog.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/Catalog/Catalog.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.AssemblyInfo.cs
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.sourcelink.json
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog..A0AFAC00.Up2Date
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.dll
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/refint/Catalog.Domain.dll
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/Catalog.Domain.pdb
+/workspace/src/Services/Catalog/Catalog.Domain/obj/Debug/net8.0/ref/Catalog.Domain.dll

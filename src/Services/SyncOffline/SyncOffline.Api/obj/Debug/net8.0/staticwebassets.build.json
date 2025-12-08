@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dqYXECGdvPG74gdF4t1Kd8BD403Mu51QUwLXjE7EN7M=",
+  "Source": "SyncOffline.Api",
+  "BasePath": "_content/SyncOffline.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

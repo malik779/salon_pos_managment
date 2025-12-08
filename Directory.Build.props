@@ -1,0 +1,85 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnablePreviewFeatures>false</EnablePreviewFeatures>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="System.Collections.Generic" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading" />
+    <Using Include="System.Threading.Tasks" />
+  </ItemGroup>
+
+  <!-- Service Domain references -->
+  <ItemGroup Condition="$([System.String]::Copy('$(MSBuildProjectFullPath)').Contains('/Services/')) And $([System.String]::Copy('$(MSBuildProjectName)').EndsWith('.Domain'))">
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj" />
+  </ItemGroup>
+
+  <!-- Service Application references + packages -->
+  <ItemGroup Condition="$([System.String]::Copy('$(MSBuildProjectFullPath)').Contains('/Services/')) And $([System.String]::Copy('$(MSBuildProjectName)').EndsWith('.Application'))">
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <ProjectReference Include="$(RepositoryRoot)src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj" />
+    <ProjectReference Include="$(MSBuildProjectDirectory)/../$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Application','.Domain'))/$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Application','.Domain')).csproj" />
+  </ItemGroup>
+
+  <!-- Service Infrastructure references + packages -->
+  <ItemGroup Condition="$([System.String]::Copy('$(MSBuildProjectFullPath)').Contains('/Services/')) And $([System.String]::Copy('$(MSBuildProjectName)').EndsWith('.Infrastructure'))">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Enrichers.Environment" />
+    <PackageReference Include="Serilog.Enrichers.Process" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Serilog.Sinks.Seq" />
+    <PackageReference Include="MassTransit" />
+    <PackageReference Include="MassTransit.RabbitMQ" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Infrastructure/BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj" />
+    <ProjectReference Include="$(MSBuildProjectDirectory)/../$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Infrastructure','.Application'))/$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Infrastructure','.Application')).csproj" />
+    <ProjectReference Include="$(MSBuildProjectDirectory)/../$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Infrastructure','.Domain'))/$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Infrastructure','.Domain')).csproj" />
+  </ItemGroup>
+
+  <!-- Service Api references + packages -->
+  <ItemGroup Condition="$([System.String]::Copy('$(MSBuildProjectFullPath)').Contains('/Services/')) And $([System.String]::Copy('$(MSBuildProjectName)').EndsWith('.Api'))">
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.Identity.Web" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Enrichers.Environment" />
+    <PackageReference Include="Serilog.Enrichers.Process" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="prometheus-net.AspNetCore" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Infrastructure/BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj" />
+    <ProjectReference Include="$(RepositoryRoot)src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj" />
+    <ProjectReference Include="$(MSBuildProjectDirectory)/../$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Api','.Application'))/$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Api','.Application')).csproj" />
+    <ProjectReference Include="$(MSBuildProjectDirectory)/../$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Api','.Infrastructure'))/$([System.String]::Copy('$(MSBuildProjectName)').Replace('.Api','.Infrastructure')).csproj" />
+    <Using Include="Serilog" />
+  </ItemGroup>
+</Project>

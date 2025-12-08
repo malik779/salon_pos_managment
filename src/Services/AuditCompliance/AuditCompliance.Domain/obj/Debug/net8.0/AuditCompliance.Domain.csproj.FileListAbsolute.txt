@@ -1,0 +1,16 @@
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/bin/Debug/net8.0/AuditCompliance.Domain.deps.json
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/bin/Debug/net8.0/AuditCompliance.Domain.dll
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/bin/Debug/net8.0/AuditCompliance.Domain.pdb
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.AssemblyInfo.cs
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.sourcelink.json
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCom.EB0E239E.Up2Date
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.dll
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/refint/AuditCompliance.Domain.dll
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/AuditCompliance.Domain.pdb
+/workspace/src/Services/AuditCompliance/AuditCompliance.Domain/obj/Debug/net8.0/ref/AuditCompliance.Domain.dll

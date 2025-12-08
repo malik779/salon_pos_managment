@@ -1,0 +1,16 @@
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/bin/Debug/net8.0/PaymentsAdapter.Domain.deps.json
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/bin/Debug/net8.0/PaymentsAdapter.Domain.dll
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/bin/Debug/net8.0/PaymentsAdapter.Domain.pdb
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.AssemblyInfo.cs
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.sourcelink.json
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/Payments.92F8878E.Up2Date
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.dll
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/refint/PaymentsAdapter.Domain.dll
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/PaymentsAdapter.Domain.pdb
+/workspace/src/Services/PaymentsAdapter/PaymentsAdapter.Domain/obj/Debug/net8.0/ref/PaymentsAdapter.Domain.dll

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "O8aOfHiK2rQbFVdsJFkUSLt3Xwg7tutAlpF7yUtSIFM=",
+  "Source": "StaffPayroll.Api",
+  "BasePath": "_content/StaffPayroll.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4oQIAweGvSyuyZHHqhW1toJmVmjk+DHxkhxKHlea6gs=",
+  "Source": "BookingCalendar.Api",
+  "BasePath": "_content/BookingCalendar.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,16 @@
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/bin/Debug/net8.0/ReportingAnalytics.Domain.deps.json
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/bin/Debug/net8.0/ReportingAnalytics.Domain.dll
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/bin/Debug/net8.0/ReportingAnalytics.Domain.pdb
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.AssemblyInfo.cs
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.sourcelink.json
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/Reportin.323039F6.Up2Date
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.dll
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/refint/ReportingAnalytics.Domain.dll
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ReportingAnalytics.Domain.pdb
+/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/obj/Debug/net8.0/ref/ReportingAnalytics.Domain.dll

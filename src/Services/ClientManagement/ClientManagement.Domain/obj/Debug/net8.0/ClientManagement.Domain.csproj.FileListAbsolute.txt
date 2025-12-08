@@ -1,0 +1,16 @@
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/bin/Debug/net8.0/ClientManagement.Domain.deps.json
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/bin/Debug/net8.0/ClientManagement.Domain.dll
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/bin/Debug/net8.0/ClientManagement.Domain.pdb
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.AssemblyInfo.cs
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.sourcelink.json
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientMa.A140C5B1.Up2Date
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.dll
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/refint/ClientManagement.Domain.dll
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ClientManagement.Domain.pdb
+/workspace/src/Services/ClientManagement/ClientManagement.Domain/obj/Debug/net8.0/ref/ClientManagement.Domain.dll

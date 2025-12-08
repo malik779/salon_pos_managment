@@ -1,0 +1,16 @@
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/bin/Debug/net8.0/SyncOffline.Domain.deps.json
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/bin/Debug/net8.0/SyncOffline.Domain.dll
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/bin/Debug/net8.0/SyncOffline.Domain.pdb
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.AssemblyInfo.cs
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.sourcelink.json
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffl.3E8E2ED6.Up2Date
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.dll
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/refint/SyncOffline.Domain.dll
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/SyncOffline.Domain.pdb
+/workspace/src/Services/SyncOffline/SyncOffline.Domain/obj/Debug/net8.0/ref/SyncOffline.Domain.dll

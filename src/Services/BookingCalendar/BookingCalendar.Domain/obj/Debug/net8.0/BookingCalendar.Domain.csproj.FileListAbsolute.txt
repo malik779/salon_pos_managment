@@ -1,0 +1,16 @@
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/bin/Debug/net8.0/BookingCalendar.Domain.deps.json
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/bin/Debug/net8.0/BookingCalendar.Domain.dll
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/bin/Debug/net8.0/BookingCalendar.Domain.pdb
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.AssemblyInfo.cs
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.sourcelink.json
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingC.DF38DCE2.Up2Date
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.dll
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/refint/BookingCalendar.Domain.dll
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/BookingCalendar.Domain.pdb
+/workspace/src/Services/BookingCalendar/BookingCalendar.Domain/obj/Debug/net8.0/ref/BookingCalendar.Domain.dll

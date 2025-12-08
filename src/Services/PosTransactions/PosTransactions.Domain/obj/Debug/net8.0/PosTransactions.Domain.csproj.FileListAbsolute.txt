@@ -1,0 +1,16 @@
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/bin/Debug/net8.0/PosTransactions.Domain.deps.json
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/bin/Debug/net8.0/PosTransactions.Domain.dll
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/bin/Debug/net8.0/PosTransactions.Domain.pdb
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.AssemblyInfo.cs
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.sourcelink.json
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTrans.C5C93A01.Up2Date
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.dll
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/refint/PosTransactions.Domain.dll
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/PosTransactions.Domain.pdb
+/workspace/src/Services/PosTransactions/PosTransactions.Domain/obj/Debug/net8.0/ref/PosTransactions.Domain.dll

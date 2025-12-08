@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8Q+7nigJq7Qh06qfnNyEzkyUkGeBavx7AG5VY/Z8awM=",
+  "Source": "ReportingAnalytics.Api",
+  "BasePath": "_content/ReportingAnalytics.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

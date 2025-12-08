@@ -1,0 +1,13 @@
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.AssemblyInfoInputs.cache
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.AssemblyInfo.cs
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.sourcelink.json
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.deps.json
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.csproj.AssemblyReference.cache
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/refint/BuildingBlocks.Domain.dll
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/Debug/net8.0/ref/BuildingBlocks.Domain.dll

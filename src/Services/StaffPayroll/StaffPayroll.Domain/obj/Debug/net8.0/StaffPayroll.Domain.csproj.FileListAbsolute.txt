@@ -1,0 +1,16 @@
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/bin/Debug/net8.0/StaffPayroll.Domain.deps.json
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/bin/Debug/net8.0/StaffPayroll.Domain.dll
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/bin/Debug/net8.0/StaffPayroll.Domain.pdb
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.AssemblyInfo.cs
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.sourcelink.json
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPay.50FF0228.Up2Date
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.dll
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/refint/StaffPayroll.Domain.dll
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/StaffPayroll.Domain.pdb
+/workspace/src/Services/StaffPayroll/StaffPayroll.Domain/obj/Debug/net8.0/ref/StaffPayroll.Domain.dll

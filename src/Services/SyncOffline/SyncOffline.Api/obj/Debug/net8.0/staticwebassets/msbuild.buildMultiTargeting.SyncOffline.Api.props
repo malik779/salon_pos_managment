@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/SyncOffline.Api.props" />
+</Project>

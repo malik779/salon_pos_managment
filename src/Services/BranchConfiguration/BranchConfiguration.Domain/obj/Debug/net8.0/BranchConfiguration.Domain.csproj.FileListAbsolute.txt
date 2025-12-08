@@ -1,0 +1,16 @@
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/bin/Debug/net8.0/BranchConfiguration.Domain.deps.json
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/bin/Debug/net8.0/BranchConfiguration.Domain.dll
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/bin/Debug/net8.0/BranchConfiguration.Domain.pdb
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.AssemblyInfo.cs
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.sourcelink.json
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchCo.A171AB04.Up2Date
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.dll
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/refint/BranchConfiguration.Domain.dll
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/BranchConfiguration.Domain.pdb
+/workspace/src/Services/BranchConfiguration/BranchConfiguration.Domain/obj/Debug/net8.0/ref/BranchConfiguration.Domain.dll

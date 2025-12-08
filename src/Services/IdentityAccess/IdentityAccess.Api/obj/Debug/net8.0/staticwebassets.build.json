@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "fEXPcMn8W12OoNxEndKkQiTY1nhMG2S8Geui7TJeYaA=",
+  "Source": "IdentityAccess.Api",
+  "BasePath": "_content/IdentityAccess.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

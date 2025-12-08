@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "uAfi8moxOr8=",
+  "success": true,
+  "projectFilePath": "/workspace/src/Services/ReportingAnalytics/ReportingAnalytics.Domain/ReportingAnalytics.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/ubuntu/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

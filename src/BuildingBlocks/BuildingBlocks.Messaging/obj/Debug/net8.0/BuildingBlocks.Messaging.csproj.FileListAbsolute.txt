@@ -1,0 +1,13 @@
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.csproj.AssemblyReference.cache
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.AssemblyInfoInputs.cache
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.AssemblyInfo.cs
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.csproj.CoreCompileInputs.cache
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.sourcelink.json
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/bin/Debug/net8.0/BuildingBlocks.Messaging.deps.json
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/bin/Debug/net8.0/BuildingBlocks.Messaging.dll
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/bin/Debug/net8.0/BuildingBlocks.Messaging.pdb
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.dll
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/refint/BuildingBlocks.Messaging.dll
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/BuildingBlocks.Messaging.pdb
+/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net8.0/ref/BuildingBlocks.Messaging.dll

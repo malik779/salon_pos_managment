@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/ReportingAnalytics.Api.props" />
+</Project>

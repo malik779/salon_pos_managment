@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "sBL/bK1hIXBN+eDgNQcAZaQh4n5T5e5hhj29lP8dtOM=",
+  "Source": "BranchConfiguration.Api",
+  "BasePath": "_content/BranchConfiguration.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

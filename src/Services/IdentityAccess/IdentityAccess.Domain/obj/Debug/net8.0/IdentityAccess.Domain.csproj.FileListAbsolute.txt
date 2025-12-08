@@ -1,0 +1,16 @@
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/bin/Debug/net8.0/IdentityAccess.Domain.deps.json
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/bin/Debug/net8.0/IdentityAccess.Domain.dll
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/bin/Debug/net8.0/IdentityAccess.Domain.pdb
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.dll
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/bin/Debug/net8.0/BuildingBlocks.Domain.pdb
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.csproj.AssemblyReference.cache
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.AssemblyInfoInputs.cache
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.AssemblyInfo.cs
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.sourcelink.json
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/Identity.6F703D24.Up2Date
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.dll
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/refint/IdentityAccess.Domain.dll
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/IdentityAccess.Domain.pdb
+/workspace/src/Services/IdentityAccess/IdentityAccess.Domain/obj/Debug/net8.0/ref/IdentityAccess.Domain.dll

@@ -1,0 +1,662 @@
+{
+  "format": 1,
+  "restore": {
+    "/workspace/src/Services/Catalog/Catalog.Application/Catalog.Application.csproj": {}
+  },
+  "projects": {
+    "/workspace/src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj",
+        "projectName": "BuildingBlocks.Application",
+        "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Application/obj/",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj"
+              },
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.2, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "FluentAssertions": "6.12.0",
+            "FluentValidation": "11.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+            "MassTransit": "8.2.1",
+            "MassTransit.RabbitMQ": "8.2.1",
+            "MediatR": "12.2.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
+            "Microsoft.AspNetCore.OpenApi": "8.0.10",
+            "Microsoft.EntityFrameworkCore": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+            "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.6",
+            "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+            "Microsoft.Identity.Web": "2.19.0",
+            "prometheus-net.AspNetCore": "8.0.0",
+            "Respawn": "6.0.0",
+            "Scrutor": "4.2.2",
+            "Serilog.AspNetCore": "8.0.1",
+            "Serilog.Enrichers.Environment": "2.2.0",
+            "Serilog.Enrichers.Process": "2.0.2",
+            "Serilog.Settings.Configuration": "8.0.0",
+            "Serilog.Sinks.Console": "5.0.1",
+            "Serilog.Sinks.Seq": "5.2.2",
+            "StackExchange.Redis": "2.7.33",
+            "Swashbuckle.AspNetCore": "6.6.2",
+            "xunit": "2.7.1",
+            "xunit.runner.visualstudio": "2.5.8"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj",
+        "projectName": "BuildingBlocks.Domain",
+        "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "FluentAssertions": "6.12.0",
+            "FluentValidation": "11.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+            "MassTransit": "8.2.1",
+            "MassTransit.RabbitMQ": "8.2.1",
+            "MediatR": "12.2.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
+            "Microsoft.AspNetCore.OpenApi": "8.0.10",
+            "Microsoft.EntityFrameworkCore": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+            "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.6",
+            "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+            "Microsoft.Identity.Web": "2.19.0",
+            "prometheus-net.AspNetCore": "8.0.0",
+            "Respawn": "6.0.0",
+            "Scrutor": "4.2.2",
+            "Serilog.AspNetCore": "8.0.1",
+            "Serilog.Enrichers.Environment": "2.2.0",
+            "Serilog.Enrichers.Process": "2.0.2",
+            "Serilog.Settings.Configuration": "8.0.0",
+            "Serilog.Sinks.Console": "5.0.1",
+            "Serilog.Sinks.Seq": "5.2.2",
+            "StackExchange.Redis": "2.7.33",
+            "Swashbuckle.AspNetCore": "6.6.2",
+            "xunit": "2.7.1",
+            "xunit.runner.visualstudio": "2.5.8"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj",
+        "projectName": "BuildingBlocks.Messaging",
+        "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/obj/",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.2.1, )",
+              "versionCentrallyManaged": true
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.2.1, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[8.0.2, )",
+              "versionCentrallyManaged": true
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.33, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "FluentAssertions": "6.12.0",
+            "FluentValidation": "11.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+            "MassTransit": "8.2.1",
+            "MassTransit.RabbitMQ": "8.2.1",
+            "MediatR": "12.2.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
+            "Microsoft.AspNetCore.OpenApi": "8.0.10",
+            "Microsoft.EntityFrameworkCore": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+            "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.6",
+            "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+            "Microsoft.Identity.Web": "2.19.0",
+            "prometheus-net.AspNetCore": "8.0.0",
+            "Respawn": "6.0.0",
+            "Scrutor": "4.2.2",
+            "Serilog.AspNetCore": "8.0.1",
+            "Serilog.Enrichers.Environment": "2.2.0",
+            "Serilog.Enrichers.Process": "2.0.2",
+            "Serilog.Settings.Configuration": "8.0.0",
+            "Serilog.Sinks.Console": "5.0.1",
+            "Serilog.Sinks.Seq": "5.2.2",
+            "StackExchange.Redis": "2.7.33",
+            "Swashbuckle.AspNetCore": "6.6.2",
+            "xunit": "2.7.1",
+            "xunit.runner.visualstudio": "2.5.8"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/src/Services/Catalog/Catalog.Application/Catalog.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/src/Services/Catalog/Catalog.Application/Catalog.Application.csproj",
+        "projectName": "Catalog.Application",
+        "projectPath": "/workspace/src/Services/Catalog/Catalog.Application/Catalog.Application.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/workspace/src/Services/Catalog/Catalog.Application/obj/",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Application/BuildingBlocks.Application.csproj"
+              },
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj"
+              },
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj"
+              },
+              "/workspace/src/Services/Catalog/Catalog.Domain/Catalog.Domain.csproj": {
+                "projectPath": "/workspace/src/Services/Catalog/Catalog.Domain/Catalog.Domain.csproj"
+              },
+              "/workspace/src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj": {
+                "projectPath": "/workspace/src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "FluentAssertions": "6.12.0",
+            "FluentValidation": "11.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+            "MassTransit": "8.2.1",
+            "MassTransit.RabbitMQ": "8.2.1",
+            "MediatR": "12.2.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
+            "Microsoft.AspNetCore.OpenApi": "8.0.10",
+            "Microsoft.EntityFrameworkCore": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+            "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.6",
+            "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+            "Microsoft.Identity.Web": "2.19.0",
+            "prometheus-net.AspNetCore": "8.0.0",
+            "Respawn": "6.0.0",
+            "Scrutor": "4.2.2",
+            "Serilog.AspNetCore": "8.0.1",
+            "Serilog.Enrichers.Environment": "2.2.0",
+            "Serilog.Enrichers.Process": "2.0.2",
+            "Serilog.Settings.Configuration": "8.0.0",
+            "Serilog.Sinks.Console": "5.0.1",
+            "Serilog.Sinks.Seq": "5.2.2",
+            "StackExchange.Redis": "2.7.33",
+            "Swashbuckle.AspNetCore": "6.6.2",
+            "xunit": "2.7.1",
+            "xunit.runner.visualstudio": "2.5.8"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/src/Services/Catalog/Catalog.Domain/Catalog.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/src/Services/Catalog/Catalog.Domain/Catalog.Domain.csproj",
+        "projectName": "Catalog.Domain",
+        "projectPath": "/workspace/src/Services/Catalog/Catalog.Domain/Catalog.Domain.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/workspace/src/Services/Catalog/Catalog.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Domain/BuildingBlocks.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "centralPackageVersions": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "FluentAssertions": "6.12.0",
+            "FluentValidation": "11.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+            "MassTransit": "8.2.1",
+            "MassTransit.RabbitMQ": "8.2.1",
+            "MediatR": "12.2.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
+            "Microsoft.AspNetCore.OpenApi": "8.0.10",
+            "Microsoft.EntityFrameworkCore": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+            "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.6",
+            "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+            "Microsoft.Identity.Web": "2.19.0",
+            "prometheus-net.AspNetCore": "8.0.0",
+            "Respawn": "6.0.0",
+            "Scrutor": "4.2.2",
+            "Serilog.AspNetCore": "8.0.1",
+            "Serilog.Enrichers.Environment": "2.2.0",
+            "Serilog.Enrichers.Process": "2.0.2",
+            "Serilog.Settings.Configuration": "8.0.0",
+            "Serilog.Sinks.Console": "5.0.1",
+            "Serilog.Sinks.Seq": "5.2.2",
+            "StackExchange.Redis": "2.7.33",
+            "Swashbuckle.AspNetCore": "6.6.2",
+            "xunit": "2.7.1",
+            "xunit.runner.visualstudio": "2.5.8"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj",
+        "projectName": "SalonSuite.Contracts",
+        "projectPath": "/workspace/src/Shared/SalonSuite.Contracts/SalonSuite.Contracts.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/workspace/src/Shared/SalonSuite.Contracts/obj/",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj": {
+                "projectPath": "/workspace/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "centralPackageVersions": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "FluentAssertions": "6.12.0",
+            "FluentValidation": "11.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+            "MassTransit": "8.2.1",
+            "MassTransit.RabbitMQ": "8.2.1",
+            "MediatR": "12.2.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
+            "Microsoft.AspNetCore.OpenApi": "8.0.10",
+            "Microsoft.EntityFrameworkCore": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+            "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+            "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.6",
+            "Microsoft.Extensions.Configuration.Binder": "8.0.2",
+            "Microsoft.Identity.Web": "2.19.0",
+            "prometheus-net.AspNetCore": "8.0.0",
+            "Respawn": "6.0.0",
+            "Scrutor": "4.2.2",
+            "Serilog.AspNetCore": "8.0.1",
+            "Serilog.Enrichers.Environment": "2.2.0",
+            "Serilog.Enrichers.Process": "2.0.2",
+            "Serilog.Settings.Configuration": "8.0.0",
+            "Serilog.Sinks.Console": "5.0.1",
+            "Serilog.Sinks.Seq": "5.2.2",
+            "StackExchange.Redis": "2.7.33",
+            "Swashbuckle.AspNetCore": "6.6.2",
+            "xunit": "2.7.1",
+            "xunit.runner.visualstudio": "2.5.8"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

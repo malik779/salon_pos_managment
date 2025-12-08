@@ -1,0 +1,16 @@
+/workspace/src/Shared/SalonSuite.Contracts/bin/Debug/net8.0/SalonSuite.Contracts.deps.json
+/workspace/src/Shared/SalonSuite.Contracts/bin/Debug/net8.0/SalonSuite.Contracts.dll
+/workspace/src/Shared/SalonSuite.Contracts/bin/Debug/net8.0/SalonSuite.Contracts.pdb
+/workspace/src/Shared/SalonSuite.Contracts/bin/Debug/net8.0/BuildingBlocks.Messaging.dll
+/workspace/src/Shared/SalonSuite.Contracts/bin/Debug/net8.0/BuildingBlocks.Messaging.pdb
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.csproj.AssemblyReference.cache
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.AssemblyInfoInputs.cache
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.AssemblyInfo.cs
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.csproj.CoreCompileInputs.cache
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.sourcelink.json
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSui.79A03296.Up2Date
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.dll
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/refint/SalonSuite.Contracts.dll
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/SalonSuite.Contracts.pdb
+/workspace/src/Shared/SalonSuite.Contracts/obj/Debug/net8.0/ref/SalonSuite.Contracts.dll
