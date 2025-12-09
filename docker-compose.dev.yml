@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: salon_sql
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "P@ssword12345!"
+    ports:
+      - "14333:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  redis:
+    image: redis:7-alpine
+    container_name: salon_redis
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: salon_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: salon
+      RABBITMQ_DEFAULT_PASS: salonpass
+
+  identity-service:
+    build:
+      context: ./services/Identity
+    container_name: identity_service
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Server=sqlserver,1433;Database=Identity;User ID=sa;Password=P@ssword12345!;TrustServerCertificate=True;"
+      Redis__ConnectionString: redis:6379
+      RabbitMQ__HostName: rabbitmq
+    depends_on:
+      - sqlserver
+      - redis
+      - rabbitmq
+    ports:
+      - "5001:8080"
+
+  booking-service:
+    build:
+      context: ./services/Booking
+    container_name: booking_service
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Server=sqlserver,1433;Database=Booking;User ID=sa;Password=P@ssword12345!;TrustServerCertificate=True;"
+      Redis__ConnectionString: redis:6379
+      RabbitMQ__HostName: rabbitmq
+    depends_on:
+      - sqlserver
+      - redis
+      - rabbitmq
+    ports:
+      - "5002:8080"
+
+volumes:
+  sql_data:
