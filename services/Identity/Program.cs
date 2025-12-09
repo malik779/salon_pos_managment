@@ -1,22 +1,19 @@
+using AutoMapper;
+using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Salon.ServiceDefaults;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args)
+    .AddServiceDefaults("identity-service");
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddProblemDetails();
+builder.Services.AddSingleton<UserStore>();
+builder.Services.AddMediatR(typeof(Program));
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.MapGet("/health", () => Results.Ok(new { service = "identity", status = "ok" }));
+app.UseServiceDefaults();
 
 app.MapPost("/auth/token", ([FromBody] TokenRequest request) =>
 {
@@ -25,35 +22,80 @@ app.MapPost("/auth/token", ([FromBody] TokenRequest request) =>
         return Results.BadRequest(new { error = "invalid_credentials" });
     }
 
-    var response = new TokenResponse(
-        AccessToken: $"fake-token-for-{request.Username}",
+    var token = new TokenResponse(
+        AccessToken: Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
         RefreshToken: Guid.NewGuid().ToString("N"),
         ExpiresIn: 3600
     );
 
-    return Results.Ok(response);
+    return Results.Ok(token);
 });
 
-app.MapPost("/users", ([FromBody] UserRequest request) =>
+app.MapPost("/users", async ([FromBody] CreateUserCommand command, IMediator mediator) =>
 {
-    if (string.IsNullOrWhiteSpace(request.Email))
+    var result = await mediator.Send(command);
+    return Results.Created($"/users/{result.Id}", result);
+});
+
+app.MapGet("/users", (UserStore store) => Results.Ok(store.Users));
+app.MapGet("/users/{id:guid}", (Guid id, UserStore store) =>
+{
+    var user = store.Users.FirstOrDefault(x => x.Id == id);
+    return user is null ? Results.NotFound() : Results.Ok(user);
+});
+
+app.MapPost("/devices/register", ([FromBody] DeviceRegistrationRequest request) =>
+{
+    if (string.IsNullOrWhiteSpace(request.DevicePublicKey))
     {
-        return Results.BadRequest(new { error = "email_required" });
+        return Results.BadRequest(new { error = "invalid_device" });
     }
 
-    var user = new
+    return Results.Ok(new
     {
-        id = Guid.NewGuid(),
-        request.Email,
-        request.FullName,
-        roles = request.Roles ?? Array.Empty<string>()
-    };
-
-    return Results.Created($"/users/{user.id}", user);
+        deviceId = request.DeviceId,
+        syncToken = Guid.NewGuid().ToString("N"),
+        expiresIn = 3600
+    });
 });
 
 app.Run();
 
 record TokenRequest(string Username, string Password);
 record TokenResponse(string AccessToken, string RefreshToken, int ExpiresIn);
-record UserRequest(string Email, string FullName, string[]? Roles);
+record DeviceRegistrationRequest(Guid DeviceId, string DevicePublicKey, string Platform);
+
+record UserDto(Guid Id, string Email, string FullName, string[] Roles);
+
+record CreateUserCommand(string Email, string FullName, string[] Roles) : IRequest<UserDto>;
+
+class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
+{
+    public CreateUserCommandValidator()
+    {
+        RuleFor(x => x.Email).NotEmpty().EmailAddress();
+        RuleFor(x => x.FullName).NotEmpty().MinimumLength(3);
+    }
+}
+
+class CreateUserHandler : IRequestHandler<CreateUserCommand, UserDto>
+{
+    private readonly UserStore _store;
+
+    public CreateUserHandler(UserStore store)
+    {
+        _store = store;
+    }
+
+    public Task<UserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+    {
+        var user = new UserDto(Guid.NewGuid(), request.Email, request.FullName, request.Roles);
+        _store.Users.Add(user);
+        return Task.FromResult(user);
+    }
+}
+
+class UserStore
+{
+    public List<UserDto> Users { get; } = new();
+}

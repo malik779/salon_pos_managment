@@ -2,6 +2,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
+WORKDIR /src/services/Identity
 RUN dotnet restore "IdentityService.csproj"
 RUN dotnet publish "IdentityService.csproj" -c Release -o /app/publish
 

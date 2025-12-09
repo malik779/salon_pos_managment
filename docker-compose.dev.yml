@@ -1,5 +1,16 @@
 version: "3.9"
 
+x-dotnet-service: &dotnet-service
+  environment:
+    ASPNETCORE_ENVIRONMENT: Development
+    ConnectionStrings__Default: "Server=sqlserver,1433;Database=app;User ID=sa;Password=P@ssword12345!;TrustServerCertificate=True;"
+    Redis__ConnectionString: redis:6379
+    RabbitMQ__HostName: rabbitmq
+  depends_on:
+    - sqlserver
+    - redis
+    - rabbitmq
+
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -29,36 +40,112 @@ services:
       RABBITMQ_DEFAULT_PASS: salonpass
 
   identity-service:
+    <<: *dotnet-service
     build:
-      context: ./services/Identity
+      context: .
+      dockerfile: ./services/Identity/Dockerfile
     container_name: identity_service
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__Default: "Server=sqlserver,1433;Database=Identity;User ID=sa;Password=P@ssword12345!;TrustServerCertificate=True;"
-      Redis__ConnectionString: redis:6379
-      RabbitMQ__HostName: rabbitmq
-    depends_on:
-      - sqlserver
-      - redis
-      - rabbitmq
     ports:
       - "5001:8080"
 
-  booking-service:
+  branch-service:
+    <<: *dotnet-service
     build:
-      context: ./services/Booking
+      context: .
+      dockerfile: ./services/Branch/Dockerfile
+    container_name: branch_service
+    ports:
+      - "5003:8080"
+
+  catalog-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Catalog/Dockerfile
+    container_name: catalog_service
+    ports:
+      - "5004:8080"
+
+  booking-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Booking/Dockerfile
     container_name: booking_service
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__Default: "Server=sqlserver,1433;Database=Booking;User ID=sa;Password=P@ssword12345!;TrustServerCertificate=True;"
-      Redis__ConnectionString: redis:6379
-      RabbitMQ__HostName: rabbitmq
-    depends_on:
-      - sqlserver
-      - redis
-      - rabbitmq
     ports:
       - "5002:8080"
+
+  pos-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/POS/Dockerfile
+    container_name: pos_service
+    ports:
+      - "5005:8080"
+
+  payments-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Payments/Dockerfile
+    container_name: payments_service
+    ports:
+      - "5006:8080"
+
+  staff-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Staff/Dockerfile
+    container_name: staff_service
+    ports:
+      - "5007:8080"
+
+  client-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Client/Dockerfile
+    container_name: client_service
+    ports:
+      - "5008:8080"
+
+  notifications-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Notifications/Dockerfile
+    container_name: notifications_service
+    ports:
+      - "5009:8080"
+
+  reports-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Reports/Dockerfile
+    container_name: reports_service
+    ports:
+      - "5010:8080"
+
+  sync-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Sync/Dockerfile
+    container_name: sync_service
+    ports:
+      - "5011:8080"
+
+  audit-service:
+    <<: *dotnet-service
+    build:
+      context: .
+      dockerfile: ./services/Audit/Dockerfile
+    container_name: audit_service
+    ports:
+      - "5012:8080"
 
 volumes:
   sql_data:

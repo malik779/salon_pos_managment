@@ -2,13 +2,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-WORKDIR /src/services/Booking
-RUN dotnet restore "BookingService.csproj"
-RUN dotnet publish "BookingService.csproj" -c Release -o /app/publish
+WORKDIR /src/services/Reports
+RUN dotnet restore "ReportsService.csproj"
+RUN dotnet publish "ReportsService.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
-ENTRYPOINT ["dotnet", "BookingService.dll"]
+ENTRYPOINT ["dotnet", "ReportsService.dll"]
