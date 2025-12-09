@@ -1,0 +1,21 @@
+.main-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.brand {
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: 24px;
+}
+
+.active {
+  font-weight: 600;
+}
