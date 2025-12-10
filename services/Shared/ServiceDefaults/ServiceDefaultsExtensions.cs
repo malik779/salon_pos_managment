@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Salon.ServiceDefaults.Messaging;
 
 namespace Salon.ServiceDefaults;
 
@@ -29,6 +31,9 @@ public static class ServiceDefaultsExtensions
                     .AllowAnyMethod();
             });
         });
+
+        builder.Services.Configure<RabbitMqOptions>(builder.Configuration.GetSection("RabbitMQ"));
+        builder.Services.AddSingleton<IEventPublisher, RabbitMqEventPublisher>();
 
         return builder;
     }
