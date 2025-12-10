@@ -1,0 +1,7 @@
+class Env {
+  const Env._();
+
+  static const apiBaseUrl = String.fromEnvironment('API_BASE_URL', defaultValue: 'http://localhost:5001');
+  static const signalRHub = String.fromEnvironment('SIGNALR_HUB', defaultValue: 'http://localhost:5001/hubs/updates');
+  static const syncServiceBase = String.fromEnvironment('SYNC_BASE_URL', defaultValue: 'http://localhost:5011');
+}

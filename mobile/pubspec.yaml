@@ -1,0 +1,41 @@
+name: salon_pos_mobile
+description: Cross-platform Flutter app for salon POS, booking, and offline sync
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  hooks_riverpod: ^2.5.1
+  dio: ^5.7.0
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  intl: ^0.19.0
+  uuid: ^4.5.1
+  shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.0.0
+  connectivity_plus: ^6.0.5
+  sqflite: ^2.3.3
+  path_provider: ^2.1.4
+  bluetooth_print: ^4.4.0
+  sentry_flutter: ^8.8.0
+  google_fonts: ^6.2.1
+  equatable: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.12
+  freezed: ^2.5.7
+  json_serializable: ^6.9.0
+  very_good_analysis: ^5.1.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/templates/
