@@ -2,20 +2,28 @@ namespace AuditService.Domain.Entities;
 
 public sealed class AuditEvent
 {
-    public AuditEvent(Guid id, string Actor, string Action, DateTime TimestampUtc, string EntityType, string EntityId)
+    private AuditEvent()
     {
-        Id = id;
-        this.Actor = Actor;
-        this.Action = Action;
-        this.TimestampUtc = TimestampUtc;
-        this.EntityType = EntityType;
-        this.EntityId = EntityId;
+        Actor = string.Empty;
+        Action = string.Empty;
+        EntityType = string.Empty;
+        EntityId = string.Empty;
     }
 
-    public Guid Id { get; }
-    public string Actor { get; }
-    public string Action { get; }
-    public DateTime TimestampUtc { get; }
-    public string EntityType { get; }
-    public string EntityId { get; }
+    public AuditEvent(Guid id, string actor, string action, DateTime timestampUtc, string entityType, string entityId)
+    {
+        Id = id;
+        Actor = actor;
+        Action = action;
+        TimestampUtc = timestampUtc;
+        EntityType = entityType;
+        EntityId = entityId;
+    }
+
+    public Guid Id { get; private set; }
+    public string Actor { get; private set; }
+    public string Action { get; private set; }
+    public DateTime TimestampUtc { get; private set; }
+    public string EntityType { get; private set; }
+    public string EntityId { get; private set; }
 }

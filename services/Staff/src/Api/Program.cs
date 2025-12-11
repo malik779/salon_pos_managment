@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args)
 
 builder.Services
     .AddStaffApplication()
-    .AddStaffInfrastructure();
+    .AddStaffInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 app.UseServiceDefaults();

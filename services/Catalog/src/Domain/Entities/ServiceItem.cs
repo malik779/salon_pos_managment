@@ -2,6 +2,11 @@ namespace CatalogService.Domain.Entities;
 
 public sealed class ServiceItem
 {
+    private ServiceItem()
+    {
+        Name = string.Empty;
+    }
+
     public ServiceItem(Guid id, string name, int durationMinutes, decimal basePrice)
     {
         Id = id;
@@ -10,8 +15,8 @@ public sealed class ServiceItem
         BasePrice = basePrice;
     }
 
-    public Guid Id { get; }
-    public string Name { get; }
-    public int DurationMinutes { get; }
-    public decimal BasePrice { get; }
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public int DurationMinutes { get; private set; }
+    public decimal BasePrice { get; private set; }
 }

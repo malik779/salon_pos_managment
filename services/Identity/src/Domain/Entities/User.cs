@@ -2,6 +2,13 @@ namespace IdentityService.Domain.Entities;
 
 public sealed class User
 {
+    private User()
+    {
+        Email = string.Empty;
+        FullName = string.Empty;
+        Roles = Array.Empty<string>();
+    }
+
     public User(Guid id, string email, string fullName, string[] roles)
     {
         Id = id;
@@ -10,8 +17,8 @@ public sealed class User
         Roles = roles;
     }
 
-    public Guid Id { get; }
-    public string Email { get; }
-    public string FullName { get; }
-    public string[] Roles { get; }
+    public Guid Id { get; private set; }
+    public string Email { get; private set; }
+    public string FullName { get; private set; }
+    public string[] Roles { get; private set; }
 }

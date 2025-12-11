@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args)
 
 builder.Services
     .AddBranchApplication()
-    .AddBranchInfrastructure();
+    .AddBranchInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 app.UseServiceDefaults();

@@ -1,4 +1,4 @@
-namespace Salon.ServiceDefaults.Messaging;
+namespace Salon.BuildingBlocks.Messaging;
 
 public sealed class RabbitMqOptions
 {

@@ -2,6 +2,12 @@ namespace StaffService.Domain.Entities;
 
 public sealed class StaffMember
 {
+    private StaffMember()
+    {
+        FullName = string.Empty;
+        Role = string.Empty;
+    }
+
     public StaffMember(Guid id, string fullName, Guid defaultBranchId, string role)
     {
         Id = id;
@@ -10,8 +16,8 @@ public sealed class StaffMember
         Role = role;
     }
 
-    public Guid Id { get; }
-    public string FullName { get; }
-    public Guid DefaultBranchId { get; }
-    public string Role { get; }
+    public Guid Id { get; private set; }
+    public string FullName { get; private set; }
+    public Guid DefaultBranchId { get; private set; }
+    public string Role { get; private set; }
 }

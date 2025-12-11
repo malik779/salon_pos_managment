@@ -3,6 +3,7 @@ using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
+using Salon.BuildingBlocks.Messaging;
 
 namespace Salon.ServiceDefaults.Messaging;
 

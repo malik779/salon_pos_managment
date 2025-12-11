@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args)
 
 builder.Services
     .AddSyncApplication()
-    .AddSyncInfrastructure();
+    .AddSyncInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 app.UseServiceDefaults();

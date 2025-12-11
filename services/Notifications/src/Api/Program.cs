@@ -1,6 +1,8 @@
 using NotificationsService.Api;
 using NotificationsService.Application;
+using NotificationsService.Application.Notifications.Consumers;
 using NotificationsService.Infrastructure;
+using Salon.BuildingBlocks.Messaging;
 using Salon.ServiceDefaults;
 
 var builder = WebApplication.CreateBuilder(args)
@@ -8,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args)
 
 builder.Services
     .AddNotificationsApplication()
-    .AddNotificationsInfrastructure();
+    .AddNotificationsInfrastructure(builder.Configuration)
+    .AddRabbitConsumer<InvoicePaidMessageHandler, InvoicePaidMessage>(new RabbitMqConsumerDefinition("pos.invoices", "notifications.invoice-paid", "pos.invoice.created"));
 
 var app = builder.Build();
 app.UseServiceDefaults();

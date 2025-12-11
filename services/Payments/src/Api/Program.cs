@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args)
 
 builder.Services
     .AddPaymentsApplication()
-    .AddPaymentsInfrastructure();
+    .AddPaymentsInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 app.UseServiceDefaults();

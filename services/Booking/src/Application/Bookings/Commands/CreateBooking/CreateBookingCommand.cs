@@ -44,7 +44,7 @@ public sealed class CreateBookingCommandHandler : IRequestHandler<CreateBookingC
             return ToDto(cached);
         }
 
-        if (!_availabilityService.IsAvailable(request.BranchId, request.StaffId, request.StartUtc, request.EndUtc))
+        if (!await _availabilityService.IsAvailableAsync(request.BranchId, request.StaffId, request.StartUtc, request.EndUtc, cancellationToken))
         {
             throw new InvalidOperationException("slot_unavailable");
         }
@@ -52,7 +52,7 @@ public sealed class CreateBookingCommandHandler : IRequestHandler<CreateBookingC
         var booking = new Booking(Guid.NewGuid(), request.BranchId, request.ClientId, request.StaffId, request.StartUtc, request.EndUtc, "Confirmed", request.IdempotencyKey);
         await _repository.AddAsync(booking, cancellationToken);
         await _idempotencyStore.RememberAsync(request.IdempotencyKey, booking, cancellationToken);
-        _availabilityService.Block(request.BranchId, request.StaffId, request.StartUtc, request.EndUtc);
+        await _availabilityService.BlockAsync(request.BranchId, request.StaffId, request.StartUtc, request.EndUtc, cancellationToken);
 
         await _eventPublisher.PublishAsync("booking.appointments", "booking.created", new
         {

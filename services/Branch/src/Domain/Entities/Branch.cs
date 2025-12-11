@@ -2,6 +2,13 @@ namespace BranchService.Domain.Entities;
 
 public sealed class Branch
 {
+    private Branch()
+    {
+        Name = string.Empty;
+        Timezone = string.Empty;
+        Address = string.Empty;
+    }
+
     public Branch(Guid id, string name, string timezone, string address)
     {
         Id = id;
@@ -10,8 +17,8 @@ public sealed class Branch
         Address = address;
     }
 
-    public Guid Id { get; }
-    public string Name { get; }
-    public string Timezone { get; }
-    public string Address { get; }
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public string Timezone { get; private set; }
+    public string Address { get; private set; }
 }

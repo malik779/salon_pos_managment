@@ -8,4 +8,7 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..&#x2F;BuildingBlocks&#x2F;BuildingBlocks.csproj" />
+  </ItemGroup>
 </Project>
