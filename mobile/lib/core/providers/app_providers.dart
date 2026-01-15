@@ -1,6 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../models/domain_models.dart';
-import '../services/domain_api.dart';
+import 'package:salon_pos_mobile/core/models/domain_models.dart';
+import 'package:salon_pos_mobile/core/services/domain_api.dart';
 
 final branchesProvider = FutureProvider<List<Branch>>((ref) async {
   final api = ref.watch(branchApiProvider);

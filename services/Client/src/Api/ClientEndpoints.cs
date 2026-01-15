@@ -1,5 +1,6 @@
 using ClientService.Application.Clients;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ClientService.Api;
 
@@ -22,6 +23,14 @@ public static class ClientEndpoints
             var result = await sender.Send(new GetClientProfileByIdQuery(id));
             return result is null ? Results.NotFound() : Results.Ok(result);
         });
+
+        group.MapGet("/all", async (ISender sender, [FromQuery] string? searchTerm = null) =>
+        {
+            var query = new GetAllClientsQuery(searchTerm);
+            var result = await sender.Send(query);
+            return Results.Ok(result);
+        })
+        .WithName("GetAllClients");
 
         return app;
     }

@@ -22,6 +22,6 @@ export class BranchListComponent implements OnInit {
   constructor(private readonly branchApi: BranchApi) {}
 
   ngOnInit(): void {
-    this.branchApi.list().subscribe((data) => (this.branches = data));
+    this.branchApi.getAll()?.subscribe((data) => (this.branches = data));
   }
 }

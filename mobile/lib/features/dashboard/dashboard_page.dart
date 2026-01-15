@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../core/providers/app_providers.dart';
-import '../../core/services/sync_service.dart';
+import 'package:salon_pos_mobile/core/providers/app_providers.dart';
+import 'package:salon_pos_mobile/core/services/sync_service.dart';
 
 class DashboardPage extends ConsumerWidget {
   const DashboardPage({super.key});
@@ -14,7 +14,7 @@ class DashboardPage extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Salon Dashboard'),
         actions: [
-          IconButton(onPressed: () => Navigator.pushNamed(context, '/settings'), icon: const Icon(Icons.settings))
+          IconButton(onPressed: () => Navigator.pushNamed(context, '/settings'), icon: const Icon(Icons.settings)),
         ],
       ),
       drawer: const _AppDrawer(),
@@ -46,7 +46,7 @@ class DashboardPage extends ConsumerWidget {
                               ],
                             ),
                           ),
-                        ))
+                        ),)
                     .toList(),
               ),
               error: (err, _) => Text('Failed to load branches: $err'),

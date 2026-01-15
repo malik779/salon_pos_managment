@@ -46,6 +46,6 @@ export class CatalogShellComponent implements OnInit {
   constructor(private readonly api: CatalogApi) {}
 
   ngOnInit(): void {
-    this.api.listServices().subscribe((services) => (this.services = services));
+    this.api.getAll()?.subscribe((services) => (this.services = services));
   }
 }

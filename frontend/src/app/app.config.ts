@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, APP_INITIALIZER, importProvidersFrom } from '@angular/core';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -17,7 +17,7 @@ import { appRoutes } from './app.routes';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
 import { idempotencyInterceptor } from './core/interceptors/idempotency.interceptor';
 import { errorInterceptor } from './core/interceptors/error.interceptor';
-import { provideAppStore } from './core/state/app.store';
+import { appInitializer } from './core/config/app-initializer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,6 +30,10 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch(), withInterceptors([authInterceptor, idempotencyInterceptor, errorInterceptor])),
     provideAnimations(),
     importProvidersFrom(MatSnackBarModule, MatDialogModule),
-    provideAppStore()
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializer,
+      multi: true
+    }
   ]
 };

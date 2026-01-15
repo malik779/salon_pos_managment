@@ -1,0 +1,7 @@
+{
+  "apiBaseUrl": "${API_BASE_URL}",
+  "signalrHub": "${SIGNALR_HUB_URL}",
+  "environment": "${ENVIRONMENT}",
+  "version": "${VERSION}",
+  "features": {}
+}

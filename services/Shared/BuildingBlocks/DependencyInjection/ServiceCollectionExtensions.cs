@@ -8,6 +8,8 @@ using Salon.BuildingBlocks.Audit;
 using Salon.BuildingBlocks.Behaviors;
 using Salon.BuildingBlocks.Cache;
 using Salon.BuildingBlocks.Messaging;
+using Microsoft.Extensions.Options;
+
 
 namespace Salon.BuildingBlocks.DependencyInjection;
 
@@ -32,10 +34,12 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddMessagingInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.Configure<RabbitMqOptions>(configuration.GetSection("RabbitMQ"));
+        services
+    .AddOptions<RabbitMqOptions>().Bind(configuration.GetSection("RabbitMQ")).ValidateDataAnnotations().ValidateOnStart();
         services.AddSingleton<RabbitMqPublisher>();
         services.AddSingleton<IIntegrationEventPublisher>(sp => sp.GetRequiredService<RabbitMqPublisher>());
         services.AddSingleton<IAuditEventPublisher>(sp => sp.GetRequiredService<RabbitMqPublisher>());
+        
         return services;
     }
 

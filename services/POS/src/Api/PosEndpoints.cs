@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using PosService.Application.Invoices;
 
 namespace PosService.Api;
@@ -22,6 +23,14 @@ public static class PosEndpoints
             var result = await sender.Send(new GetInvoiceByIdQuery(id));
             return result is null ? Results.NotFound() : Results.Ok(result);
         });
+
+        group.MapGet("/all", async (ISender sender, [FromQuery] string? searchTerm = null) =>
+        {
+            var query = new GetAllInvoicesQuery(searchTerm);
+            var result = await sender.Send(query);
+            return Results.Ok(result);
+        })
+        .WithName("GetAllInvoices");
 
         return app;
     }

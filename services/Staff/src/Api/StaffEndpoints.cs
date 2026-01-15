@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using StaffService.Application.StaffMembers;
 
 namespace StaffService.Api;
@@ -22,6 +23,14 @@ public static class StaffEndpoints
             var result = await sender.Send(new GetStaffMemberByIdQuery(id));
             return result is null ? Results.NotFound() : Results.Ok(result);
         });
+
+        group.MapGet("/all", async (ISender sender, [FromQuery] string? searchTerm = null) =>
+        {
+            var query = new GetAllStaffMembersQuery(searchTerm);
+            var result = await sender.Send(query);
+            return Results.Ok(result);
+        })
+        .WithName("GetAllStaffMembers");
 
         return app;
     }

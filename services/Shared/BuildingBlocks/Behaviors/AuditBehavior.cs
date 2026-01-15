@@ -21,7 +21,7 @@ public sealed class AuditBehavior<TRequest, TResponse> : IPipelineBehavior<TRequ
     {
         var response = await next();
 
-        if (request is IAuditableRequest auditable)
+        if (request is IAuditableRequest auditable && response is not null)
         {
             var auditEvent = auditable.CreateAuditEvent(response);
             auditEvent = auditEvent with { Service = _serviceName };

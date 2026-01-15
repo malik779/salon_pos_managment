@@ -46,6 +46,25 @@ internal sealed class ClientRepository : IClientRepository
     {
         await _context.Clients.AddAsync(profile, cancellationToken);
     }
+
+    public async Task<List<ClientProfile>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken)
+    {
+        var query = _context.Clients.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(c =>
+                c.FirstName.Contains(searchTerm) ||
+                c.LastName.Contains(searchTerm) ||
+                c.Email.Contains(searchTerm) ||
+                c.Phone.Contains(searchTerm));
+        }
+
+        return await query
+            .OrderBy(c => c.LastName)
+            .ThenBy(c => c.FirstName)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class ClientInfrastructureRegistration

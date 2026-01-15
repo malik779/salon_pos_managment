@@ -34,6 +34,6 @@ export class StaffShellComponent implements OnInit {
   constructor(private readonly api: StaffApi) {}
 
   ngOnInit(): void {
-    this.api.list().subscribe((staff) => (this.staffMembers = staff));
+    this.api.getAll()?.subscribe((staff) => (this.staffMembers = staff));
   }
 }

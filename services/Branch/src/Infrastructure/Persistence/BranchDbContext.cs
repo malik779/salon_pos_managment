@@ -46,6 +46,62 @@ internal sealed class BranchRepository : IBranchRepository
     {
         await _context.Branches.AddAsync(branch, cancellationToken);
     }
+
+    public async Task UpdateAsync(Branch branch, CancellationToken cancellationToken)
+    {
+        _context.Branches.Update(branch);
+        await Task.CompletedTask;
+    }
+
+    public async Task DeleteAsync(Branch branch, CancellationToken cancellationToken)
+    {
+        _context.Branches.Remove(branch);
+        await Task.CompletedTask;
+    }
+
+    public async Task<(List<Branch> Items, int TotalCount)> GetBranchesAsync(
+        int pageNumber,
+        int pageSize,
+        string? searchTerm,
+        CancellationToken cancellationToken)
+    {
+        var query = _context.Branches.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(b =>
+                b.Name.Contains(searchTerm) ||
+                b.Address.Contains(searchTerm) ||
+                b.Timezone.Contains(searchTerm));
+        }
+
+        var totalCount = await query.CountAsync(cancellationToken);
+
+        var items = await query
+            .OrderBy(b => b.Name)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync(cancellationToken);
+
+        return (items, totalCount);
+    }
+
+    public async Task<List<Branch>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken)
+    {
+        var query = _context.Branches.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(b =>
+                b.Name.Contains(searchTerm) ||
+                b.Address.Contains(searchTerm) ||
+                b.Timezone.Contains(searchTerm));
+        }
+
+        return await query
+            .OrderBy(b => b.Name)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class BranchInfrastructureRegistration

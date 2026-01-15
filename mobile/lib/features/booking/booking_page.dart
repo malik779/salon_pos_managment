@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../core/models/domain_models.dart';
-import '../../core/providers/app_providers.dart';
-import '../../core/services/domain_api.dart';
-import '../../core/services/sync_service.dart';
+import 'package:salon_pos_mobile/core/models/domain_models.dart';
+import 'package:salon_pos_mobile/core/providers/app_providers.dart';
+import 'package:salon_pos_mobile/core/services/domain_api.dart';
+import 'package:salon_pos_mobile/core/services/sync_service.dart';
 
 class BookingPage extends ConsumerWidget {
   const BookingPage({super.key});

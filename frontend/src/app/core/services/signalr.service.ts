@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Subject } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { ConfigService } from './config.service';
 
 @Injectable({ providedIn: 'root' })
 export class SignalRService implements OnDestroy {
@@ -10,9 +10,12 @@ export class SignalRService implements OnDestroy {
   readonly bookingUpdates$ = new Subject<unknown>();
   readonly invoiceUpdates$ = new Subject<unknown>();
 
+  constructor(private readonly configService: ConfigService) {}
+
   connect(token?: string) {
+    const hubUrl = this.configService.getSignalrHubUrl();
     this.hub = new signalR.HubConnectionBuilder()
-      .withUrl(environment.signalrHub, { accessTokenFactory: () => token ?? '' })
+      .withUrl(hubUrl, { accessTokenFactory: () => token ?? '' })
       .withAutomaticReconnect()
       .build();
 

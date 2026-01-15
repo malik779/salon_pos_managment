@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'features/auth/login_page.dart';
-import 'features/dashboard/dashboard_page.dart';
-import 'features/booking/booking_page.dart';
-import 'features/pos/pos_page.dart';
-import 'features/clients/clients_page.dart';
-import 'features/staff/staff_page.dart';
-import 'features/settings/settings_page.dart';
+import 'package:salon_pos_mobile/features/auth/login_page.dart';
+import 'package:salon_pos_mobile/features/booking/booking_page.dart';
+import 'package:salon_pos_mobile/features/clients/clients_page.dart';
+import 'package:salon_pos_mobile/features/dashboard/dashboard_page.dart';
+import 'package:salon_pos_mobile/features/pos/pos_page.dart';
+import 'package:salon_pos_mobile/features/settings/settings_page.dart';
+import 'package:salon_pos_mobile/features/staff/staff_page.dart';
 
 class SalonApp extends ConsumerWidget {
   const SalonApp({super.key});

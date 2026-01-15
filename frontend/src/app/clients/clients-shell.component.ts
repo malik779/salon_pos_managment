@@ -36,6 +36,6 @@ export class ClientsShellComponent implements OnInit {
   constructor(private readonly api: ClientApi) {}
 
   ngOnInit(): void {
-    this.api.list().subscribe((clients) => (this.clients = clients));
+    this.api.getAll()?.subscribe((clients) => (this.clients = clients));
   }
 }
