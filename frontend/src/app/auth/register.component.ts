@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,9 +9,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IdentityApi } from '../core/api/api-client';
-import { BranchApi } from '../core/api/api-client';
-import { catchError, of } from 'rxjs';
 import { BranchStore } from '@app/branches/store/branch.store';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -134,7 +133,7 @@ import { BranchStore } from '@app/branches/store/branch.store';
               <mat-label>Branch</mat-label>
               <mat-icon matPrefix>store</mat-icon>
               <mat-select formControlName="branchId" required>
-                <mat-option *ngFor="let branch of branches" [value]="branch.id">
+                <mat-option *ngFor="let branch of branches()" [value]="branch.id">
                   {{ branch.name }}
                 </mat-option>
               </mat-select>
@@ -144,10 +143,9 @@ import { BranchStore } from '@app/branches/store/branch.store';
               <mat-label>Role</mat-label>
               <mat-icon matPrefix>badge</mat-icon>
               <mat-select formControlName="role" required>
-                <mat-option value="Cashier">Cashier</mat-option>
-                <mat-option value="Therapist">Therapist</mat-option>
-                <mat-option value="Manager">Manager</mat-option>
-                <mat-option value="Owner">Owner</mat-option>
+                <mat-option *ngFor="let role of roleOptions" [value]="role.value">
+                  {{ role.label }}
+                </mat-option>
               </mat-select>
             </mat-form-field>
 
@@ -467,17 +465,28 @@ import { BranchStore } from '@app/branches/store/branch.store';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit, OnDestroy {
+  private readonly destroy$ = new Subject<void>();
+  private readonly branchSelection = signal('');
   hidePassword = true;
   hideConfirmPassword = true;
   isLoading = false;
-  branches: Array<{ id: string; name: string }> = [];
   readonly branchStore = inject(BranchStore);
+  readonly branches = computed(() => this.branchStore.allItems() ?? []);
+  readonly roleOptions = [
+    { value: 'SuperAdmin', label: 'Super Admin' },
+    { value: 'SalonOwner', label: 'Salon Owner' },
+    { value: 'BranchManager', label: 'Branch Manager' },
+    { value: 'Staff', label: 'Staff' },
+    { value: 'Receptionist', label: 'Receptionist' },
+    { value: 'Customer', label: 'Customer' }
+  ];
   readonly form = this.fb.group({
     fullName: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     confirmPassword: ['', [Validators.required]],
+    salonId: ['', [Validators.required]],
     branchId: ['', [Validators.required]],
     role: ['', [Validators.required]]
   }, { validators: this.passwordMatchValidator });
@@ -487,7 +496,7 @@ export class RegisterComponent {
     private readonly identityApi: IdentityApi,
     private readonly router: Router
   ) {
-    this.loadBranches();
+    this.setupSalonSync();
   }
 
   passwordMatchValidator(group: any) {
@@ -496,9 +505,29 @@ export class RegisterComponent {
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
-  loadBranches() {
+  ngOnInit(): void {
     this.branchStore.loadAll();
-    this.branches = this.branchStore.allItems() ?? [];
+    this.branchSelection.set(this.form.controls.branchId.value ?? '');
+    this.form.controls.branchId.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((branchId) => this.branchSelection.set(branchId ?? ''));
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  private setupSalonSync() {
+    effect(() => {
+      const branchId = this.branchSelection();
+      const branch = this.branches().find((item) => item.id === branchId);
+      const salonId = branch?.salonId ?? '';
+
+      if (this.form.controls.salonId.value !== salonId) {
+        this.form.controls.salonId.setValue(salonId, { emitEvent: false });
+      }
+    });
   }
 
   submit() {
@@ -507,12 +536,13 @@ export class RegisterComponent {
     }
 
     this.isLoading = true;
-    const { email, password, fullName, branchId, role } = this.form.value;
+    const { email, password, fullName, salonId, branchId, role } = this.form.value;
     
     this.identityApi.register(
       email ?? '',
       password ?? '',
       fullName ?? '',
+      salonId ?? '',
       branchId ?? '',
       role ?? ''
     ).subscribe({
