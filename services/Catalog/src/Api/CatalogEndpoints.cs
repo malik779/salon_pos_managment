@@ -1,5 +1,6 @@
 using CatalogService.Application.Items;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogService.Api;
 
@@ -22,6 +23,14 @@ public static class CatalogEndpoints
             var result = await sender.Send(new GetCatalogItemQuery(id));
             return result is null ? Results.NotFound() : Results.Ok(result);
         });
+
+        group.MapGet("/all", async (ISender sender, [FromQuery] string? searchTerm = null) =>
+        {
+            var query = new GetAllCatalogItemsQuery(searchTerm);
+            var result = await sender.Send(query);
+            return Results.Ok(result);
+        })
+        .WithName("GetAllCatalogItems");
 
         return app;
     }

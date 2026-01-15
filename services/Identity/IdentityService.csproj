@@ -1,9 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..&#x2F;Shared&#x2F;ServiceDefaults&#x2F;ServiceDefaults.csproj" />
     <ProjectReference Include="..&#x2F;Shared&#x2F;BuildingBlocks&#x2F;BuildingBlocks.csproj" />

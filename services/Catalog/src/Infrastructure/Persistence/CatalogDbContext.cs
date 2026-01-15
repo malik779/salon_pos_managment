@@ -54,6 +54,22 @@ internal sealed class CatalogRepository : ICatalogRepository
             _context.Entry(existing).CurrentValues.SetValues(item);
         }
     }
+
+    public async Task<List<CatalogItem>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken)
+    {
+        var query = _context.CatalogItems.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(i =>
+                i.Name.Contains(searchTerm) ||
+                i.Type.Contains(searchTerm));
+        }
+
+        return await query
+            .OrderBy(i => i.Name)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class CatalogInfrastructureRegistration

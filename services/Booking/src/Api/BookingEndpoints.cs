@@ -1,5 +1,6 @@
 using BookingService.Application.Appointments;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookingService.Api;
 
@@ -22,6 +23,14 @@ public static class BookingEndpoints
             var result = await sender.Send(new GetAppointmentByIdQuery(id));
             return result is null ? Results.NotFound() : Results.Ok(result);
         });
+
+        group.MapGet("/all", async (ISender sender, [FromQuery] string? searchTerm = null) =>
+        {
+            var query = new GetAllAppointmentsQuery(searchTerm);
+            var result = await sender.Send(query);
+            return Results.Ok(result);
+        })
+        .WithName("GetAllAppointments");
 
         return app;
     }

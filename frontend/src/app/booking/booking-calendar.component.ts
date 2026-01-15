@@ -61,7 +61,7 @@ export class BookingCalendarComponent implements OnInit {
           startUtc: new Date().toISOString(),
           endUtc: addMinutes(new Date(), 60).toISOString()
         },
-        this.idempotency.generate()
+        // this.idempotency.generate()
       )
       .subscribe();
   }

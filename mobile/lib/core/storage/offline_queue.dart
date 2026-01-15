@@ -23,7 +23,7 @@ class OfflineQueue {
         createdAt INTEGER NOT NULL
       )
       ''');
-    });
+    },);
     return OfflineQueue._(db);
   }
 
@@ -44,8 +44,8 @@ class OfflineQueue {
         .map((row) => {
               'id': row['id'],
               'type': row['type'],
-              'payload': jsonDecode(row['payload'] as String) as Map<String, dynamic>,
-            })
+              'payload': jsonDecode(row['payload']! as String) as Map<String, dynamic>,
+            },)
         .toList();
   }
 

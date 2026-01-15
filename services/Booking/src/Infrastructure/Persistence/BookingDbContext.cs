@@ -46,6 +46,20 @@ internal sealed class AppointmentRepository : IAppointmentRepository
     {
         await _context.Appointments.AddAsync(appointment, cancellationToken);
     }
+
+    public async Task<List<Appointment>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken)
+    {
+        var query = _context.Appointments.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(a => a.Status.Contains(searchTerm) || a.Source.Contains(searchTerm));
+        }
+
+        return await query
+            .OrderByDescending(a => a.StartUtc)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class BookingInfrastructureRegistration

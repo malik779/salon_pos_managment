@@ -1,11 +1,32 @@
 .main-toolbar {
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+  transition: all 0.3s ease;
 }
 
 .brand {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+}
+
+.brand::before {
+  content: '✨';
+  font-size: 1.25rem;
+  animation: float 3s ease-in-out infinite;
 }
 
 .spacer {
@@ -13,9 +34,63 @@
 }
 
 .content {
-  padding: 24px;
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.active {
+@media (max-width: 768px) {
+  .content {
+    padding: 1rem;
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.main-toolbar a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.main-toolbar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  transform: translateY(-1px);
+}
+
+.main-toolbar a.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white !important;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .main-toolbar {
+    padding: 0 1rem;
+  }
+
+  .brand {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-toolbar a {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.125rem;
+  }
 }

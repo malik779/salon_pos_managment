@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
 using Polly;
 using Polly.Retry;
 using Salon.BuildingBlocks.Abstractions;
@@ -20,5 +21,10 @@ internal sealed class DefaultRetryPolicyProvider : IRetryPolicyProvider
         return Policy<TResponse>
             .Handle<Exception>()
             .WaitAndRetryAsync(Math.Max(1, retryCount), attempt => TimeSpan.FromMilliseconds(100 * Math.Pow(2, attempt - 1)));
+    }
+
+    public Task<object> ExecuteAsync<T>(RequestHandlerDelegate<object> next, int retryCount, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
     }
 }

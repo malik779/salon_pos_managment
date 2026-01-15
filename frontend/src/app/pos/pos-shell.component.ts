@@ -82,7 +82,12 @@ export class PosShellComponent {
   }
 
   finalize() {
-    this.posApi.createInvoice(this.lines(), '00000000-0000-0000-0000-000000000002', '00000000-0000-0000-0000-000000000001').subscribe(() => {
+    this.posApi.create({
+      branchId: '00000000-0000-0000-0000-000000000002',
+      clientId: '00000000-0000-0000-0000-000000000001',
+      total: this.lines().reduce((acc, line) => acc + line.unitPrice * line.quantity, 0),
+      status: 'pending',
+    }).subscribe(() => {
       this.lines.set([]);
     });
   }

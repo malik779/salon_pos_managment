@@ -1,6 +1,6 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'domain_api.dart';
+import 'package:salon_pos_mobile/core/services/domain_api.dart';
 
 final authServiceProvider = Provider<AuthService>((ref) {
   final identityApi = ref.watch(identityApiProvider);

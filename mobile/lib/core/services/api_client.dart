@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../env.dart';
+import 'package:salon_pos_mobile/env.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final dio = Dio(BaseOptions(baseUrl: Env.apiBaseUrl, connectTimeout: const Duration(seconds: 10)));
@@ -19,6 +19,6 @@ final dioProvider = Provider<Dio>((ref) {
       // TODO: integrate retry policy.
       return handler.next(error);
     },
-  ));
+  ),);
   return dio;
 });

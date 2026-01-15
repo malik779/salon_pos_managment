@@ -42,6 +42,6 @@ export class ReportsShellComponent {
 
   load() {
     const branchId = this.form.value.branchId ?? '';
-    this.api.loadBranchDaily(branchId).subscribe((reports: any) => (this.reports = reports as any[]));
+    this.api.getById(branchId).subscribe((reports: any) => (this.reports = reports as any[]));
   }
 }

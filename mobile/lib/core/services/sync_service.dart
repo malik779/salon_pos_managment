@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../env.dart';
-import '../storage/offline_queue.dart';
+import 'package:salon_pos_mobile/core/storage/offline_queue.dart';
+import 'package:salon_pos_mobile/env.dart';
 
 final syncServiceProvider = Provider<SyncService>((ref) {
   final dio = Dio(BaseOptions(baseUrl: Env.syncServiceBase));
@@ -62,7 +62,7 @@ class SyncService {
               'payload': op['payload'],
             }
           ],
-        });
+        },);
         await queue.remove(op['id'] as String);
       } on DioException {
         _statusController.add(SyncStatus.offline);

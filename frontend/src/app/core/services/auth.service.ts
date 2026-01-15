@@ -9,12 +9,15 @@ export class AuthService {
 
   constructor(private readonly identityApi: IdentityApi) {}
 
-  login(username: string, password: string) {
-    return this.identityApi.login(username, password).pipe(
-      tap((tokens) => {
-        this.accessToken.set(tokens.accessToken);
-        localStorage.setItem('sp.accessToken', tokens.accessToken);
-        localStorage.setItem('sp.refreshToken', tokens.refreshToken);
+  login(email: string, password: string) {
+    return this.identityApi.login(email, password).pipe(
+      tap((response) => {
+        this.accessToken.set(response.accessToken);
+        localStorage.setItem('sp.accessToken', response.accessToken);
+        localStorage.setItem('sp.refreshToken', response.refreshToken);
+        localStorage.setItem('sp.userId', response.userId);
+        localStorage.setItem('sp.userEmail', response.email);
+        localStorage.setItem('sp.userName', response.fullName);
       })
     );
   }

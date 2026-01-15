@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IdentityService": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ConnectionStrings__Default": "Server=localhost,14333;Database=app;User ID=sa;Password=P@ssword12345!;TrustServerCertificate=True;",
+        "Redis__ConnectionString": "localhost:6379",
+        "RabbitMQ__HostName": "localhost",
+        "RabbitMQ__UserName": "salon",
+        "RabbitMQ__Password": "salonpass"
+      }
+    }
+  }
+}
+

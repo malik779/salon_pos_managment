@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../core/models/domain_models.dart';
-import '../../core/services/domain_api.dart';
+import 'package:salon_pos_mobile/core/models/domain_models.dart';
+import 'package:salon_pos_mobile/core/services/domain_api.dart';
 
 class StaffPage extends ConsumerWidget {
   const StaffPage({super.key});

@@ -44,6 +44,20 @@ internal sealed class StaffRepository : IStaffRepository
     {
         await _context.StaffMembers.AddAsync(staffMember, cancellationToken);
     }
+
+    public async Task<List<StaffMember>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken)
+    {
+        var query = _context.StaffMembers.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(s => s.Role.Contains(searchTerm));
+        }
+
+        return await query
+            .OrderBy(s => s.Role)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class StaffInfrastructureRegistration

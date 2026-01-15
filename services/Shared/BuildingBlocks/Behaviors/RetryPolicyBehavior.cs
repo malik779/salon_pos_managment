@@ -20,6 +20,9 @@ public sealed class RetryPolicyBehavior<TRequest, TResponse> : IPipelineBehavior
             return next();
         }
 
-        return _retryPolicyProvider.ExecuteAsync(next, retryable.RetryCount, cancellationToken);
+        // Wrap the RequestHandlerDelegate<TResponse> in a lambda to match the expected Func<Task<TResponse>> signature
+        Func<Task<TResponse>> action = () => next();
+
+        return _retryPolicyProvider.ExecuteAsync(action, retryable.RetryCount, cancellationToken);
     }
 }

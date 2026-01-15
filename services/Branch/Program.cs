@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using BranchService.Api;
 using BranchService.Infrastructure.Persistence;
+using Salon.BuildingBlocks.Data;
 using Salon.BuildingBlocks.DependencyInjection;
 using Salon.ServiceDefaults;
 
@@ -19,5 +20,13 @@ builder.Services
 
 var app = builder.Build();
 app.UseServiceDefaults();
+
+// Seed database
+await app.SeedDatabaseAsync<BranchDbContext>(async (context) =>
+{
+    var logger = app.Services.GetRequiredService<ILogger<BranchDbContext>>();
+    await BranchDbSeeder.SeedAsync(context, logger);
+});
+
 app.MapBranchEndpoints();
 app.Run();

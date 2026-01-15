@@ -45,6 +45,20 @@ internal sealed class InvoiceRepository : IInvoiceRepository
     {
         await _context.Invoices.AddAsync(invoice, cancellationToken);
     }
+
+    public async Task<List<Invoice>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken)
+    {
+        var query = _context.Invoices.AsNoTracking().AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(i => i.Status.Contains(searchTerm));
+        }
+
+        return await query
+            .OrderByDescending(i => i.CreatedAtUtc)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class PosInfrastructureRegistration

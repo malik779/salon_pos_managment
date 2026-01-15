@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:salon_pos_mobile/core/models/domain_models.dart';
+import 'package:salon_pos_mobile/core/services/domain_api.dart';
+import 'package:salon_pos_mobile/core/services/sync_service.dart';
 import 'package:uuid/uuid.dart';
-import '../../core/models/domain_models.dart';
-import '../../core/services/domain_api.dart';
-import '../../core/services/sync_service.dart';
 
 class PosPage extends ConsumerStatefulWidget {
   const PosPage({super.key});
@@ -89,7 +89,7 @@ class _PosPageState extends ConsumerState<PosPage> {
         itemType: 'product',
         quantity: int.tryParse(_qtyController.text) ?? 1,
         unitPrice: double.tryParse(_priceController.text) ?? 0,
-      ));
+      ),);
     });
     _skuController.clear();
     _qtyController.text = '1';
@@ -115,7 +115,7 @@ class _PosPageState extends ConsumerState<PosPage> {
     }
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Invoice submitted')));
-      setState(() => _lines.clear());
+      setState(_lines.clear);
     }
   }
 }

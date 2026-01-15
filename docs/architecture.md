@@ -38,7 +38,7 @@ Shared assets:
 - **/scripts**: developer tooling, `run-locally.sh`, data seeding helpers.
 
 ## 3. Technology Stack
-- **Backend**: .NET 8, ASP.NET Core Web API, MediatR (CQRS), EF Core, SQL Server (provider-agnostic), StackExchange.Redis, AutoMapper, FluentValidation, Serilog, OpenTelemetry.
+- **Backend**: .NET 9, ASP.NET Core Web API, MediatR (CQRS), EF Core, SQL Server (provider-agnostic), StackExchange.Redis, AutoMapper, FluentValidation, Serilog, OpenTelemetry.
 - **Async messaging**: RabbitMQ (events, sagas). Redis used for caching, locking, offline sync staging.
 - **Frontend**: Angular 20+, RxJS, NgRx signal stores, Angular Material + Tailwind, Jest unit tests, Cypress E2E.
 - **Mobile**: Flutter (for cross-platform speed, Bluetooth plugin support), uses same backend APIs. SQLite for offline queue, native channels for hardware.
@@ -227,7 +227,7 @@ Pipeline behaviors (applied in each service):
 - Logging scrubs PII where unnecessary; encryption at rest for sensitive tables (consents, payment tokens).
 
 ## 13. DevOps & Operations
-- **Docker**: multi-stage builds for each service; base image `mcr.microsoft.com/dotnet/aspnet:8.0`.
+- **Docker**: multi-stage builds for each service; base image `mcr.microsoft.com/dotnet/aspnet:9.0`.
 - **docker-compose.dev.yml**: composes SQL Server, Redis, RabbitMQ, Identity service, and sample Booking/POS services for integration testing.
 - **GitHub Actions**: workflow per service building/pushing Docker image, running unit tests, publishing coverage.
 - **Kubernetes**: `infra/k8s` holds Helm charts; secrets referenced via External Secrets operator; horizontal pod autoscaler config per service.

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../models/domain_models.dart';
-import 'api_client.dart';
+import 'package:salon_pos_mobile/core/models/domain_models.dart';
+import 'package:salon_pos_mobile/core/services/api_client.dart';
 
 final identityApiProvider = Provider<IdentityApi>((ref) => IdentityApi(ref.watch(dioProvider)));
 final bookingApiProvider = Provider<BookingApi>((ref) => BookingApi(ref.watch(dioProvider)));
@@ -20,7 +20,7 @@ class IdentityApi {
     final response = await _dio.post('${_serviceBase(5001)}/auth/token', data: {
       'username': username,
       'password': password,
-    });
+    },);
     return response.data as Map<String, dynamic>;
   }
 }
@@ -44,7 +44,7 @@ class BookingApi {
       'branchId': branchId,
       'from': from.toIso8601String(),
       'to': to.toIso8601String(),
-    });
+    },);
     return (response.data as List<dynamic>).map((e) => BookingSlot.fromJson(e as Map<String, dynamic>)).toList();
   }
 

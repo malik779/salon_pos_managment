@@ -43,15 +43,22 @@ public sealed class RegisterUserCommandValidator : AbstractValidator<RegisterUse
 public sealed class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, UserDto>
 {
     private readonly IUserRepository _repository;
+    private readonly IPasswordHasher _passwordHasher;
 
-    public RegisterUserCommandHandler(IUserRepository repository)
+    public RegisterUserCommandHandler(IUserRepository repository, IPasswordHasher passwordHasher)
     {
         _repository = repository;
+        _passwordHasher = passwordHasher;
     }
 
     public async Task<UserDto> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        var user = new UserAccount(Guid.NewGuid(), request.Email, request.FullName, request.BranchId, request.Role);
+        // This command is for admin-created users, so we need to generate a temporary password
+        // In production, you might want to send a password reset email instead
+        var temporaryPassword = Guid.NewGuid().ToString("N")[..16]; // Generate a temporary password
+        var passwordHash = _passwordHasher.HashPassword(temporaryPassword);
+        
+        var user = new UserAccount(Guid.NewGuid(), request.Email, request.FullName, request.BranchId, request.Role, passwordHash);
         await _repository.AddAsync(user, cancellationToken);
         return new UserDto(user.Id, user.Email, user.FullName, user.BranchId, user.Role, user.IsActive);
     }
