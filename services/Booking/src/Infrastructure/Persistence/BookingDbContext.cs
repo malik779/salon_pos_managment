@@ -60,6 +60,15 @@ internal sealed class AppointmentRepository : IAppointmentRepository
             .OrderByDescending(a => a.StartUtc)
             .ToListAsync(cancellationToken);
     }
+
+    public async Task<List<Appointment>> GetCalendarAsync(Guid branchId, DateTime fromUtc, DateTime toUtc, CancellationToken cancellationToken)
+    {
+        return await _context.Appointments
+            .AsNoTracking()
+            .Where(a => a.BranchId == branchId && a.StartUtc >= fromUtc && a.StartUtc <= toUtc)
+            .OrderBy(a => a.StartUtc)
+            .ToListAsync(cancellationToken);
+    }
 }
 
 public static class BookingInfrastructureRegistration

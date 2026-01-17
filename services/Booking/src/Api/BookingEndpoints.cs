@@ -8,7 +8,7 @@ public static class BookingEndpoints
 {
     public static IEndpointRouteBuilder MapBookingEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/bookings");
+        var group = app.MapGroup("/api/booking");
 
         group.MapPost("", async (ScheduleAppointmentRequest request, HttpContext context, ISender sender) =>
         {
@@ -31,6 +31,14 @@ public static class BookingEndpoints
             return Results.Ok(result);
         })
         .WithName("GetAllAppointments");
+
+        group.MapGet("/calendar", async ([FromQuery] Guid branchId, [FromQuery] DateTime from, [FromQuery] DateTime to, ISender sender) =>
+        {
+            var query = new GetCalendarQuery(branchId, from, to);
+            var result = await sender.Send(query);
+            return Results.Ok(result);
+        })
+        .WithName("GetBookingCalendar");
 
         return app;
     }

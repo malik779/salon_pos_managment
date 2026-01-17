@@ -7,7 +7,7 @@ public static class SyncEndpoints
 {
     public static IEndpointRouteBuilder MapSyncEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/sync");
+        var group = app.MapGroup("/api/sync");
 
         group.MapPost("/register", async (RegisterDeviceSyncRequest request, HttpContext context, ISender sender) =>
         {

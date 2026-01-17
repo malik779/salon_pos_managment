@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IdentityApi } from '../core/api/api-client';
 import { BranchStore } from '@app/branches/store/branch.store';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -467,7 +467,6 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   private readonly destroy$ = new Subject<void>();
-  private readonly branchSelection = signal('');
   hidePassword = true;
   hideConfirmPassword = true;
   isLoading = false;
@@ -486,7 +485,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     confirmPassword: ['', [Validators.required]],
-    salonId: ['', [Validators.required]],
     branchId: ['', [Validators.required]],
     role: ['', [Validators.required]]
   }, { validators: this.passwordMatchValidator });
@@ -496,7 +494,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     private readonly identityApi: IdentityApi,
     private readonly router: Router
   ) {
-    this.setupSalonSync();
   }
 
   passwordMatchValidator(group: any) {
@@ -507,27 +504,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.branchStore.loadAll();
-    this.branchSelection.set(this.form.controls.branchId.value ?? '');
-    this.form.controls.branchId.valueChanges
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((branchId) => this.branchSelection.set(branchId ?? ''));
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  private setupSalonSync() {
-    effect(() => {
-      const branchId = this.branchSelection();
-      const branch = this.branches().find((item) => item.id === branchId);
-      const salonId = branch?.salonId ?? '';
-
-      if (this.form.controls.salonId.value !== salonId) {
-        this.form.controls.salonId.setValue(salonId, { emitEvent: false });
-      }
-    });
   }
 
   submit() {
@@ -536,14 +517,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }
 
     this.isLoading = true;
-    const { email, password, fullName, salonId, branchId, role } = this.form.value;
+    const { email, password, fullName, branchId, role } = this.form.value;
     
     this.identityApi.register(
       email ?? '',
       password ?? '',
       fullName ?? '',
-      salonId ?? '',
-      branchId ?? '',
+        branchId ?? '',
       role ?? ''
     ).subscribe({
       next: () => {

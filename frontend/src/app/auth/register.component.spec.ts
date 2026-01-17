@@ -17,13 +17,9 @@ describe('RegisterComponent', () => {
 
   const branch: Branch = {
     id: 'branch-1',
-    salonId: 'salon-1',
     name: 'Downtown',
-    code: 'DT',
     timezone: 'UTC',
-    address: '123 Main St',
-    phone: '555-0100',
-    email: 'downtown@salon.test'
+    address: '123 Main St'
   };
 
   beforeEach(async () => {
@@ -52,15 +48,11 @@ describe('RegisterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('syncs salonId when branch is selected', () => {
-    component.form.controls.branchId.setValue(branch.id);
-    fixture.detectChanges();
-
+  it('loads branches on init', () => {
     expect(branchStoreMock.loadAll).toHaveBeenCalled();
-    expect(component.form.controls.salonId.value).toBe(branch.salonId);
   });
 
-  it('submits registration with salonId from branch', () => {
+  it('submits registration with correct parameters', () => {
     component.form.patchValue({
       fullName: 'Jordan Stylist',
       email: 'jordan@example.com',
@@ -76,7 +68,6 @@ describe('RegisterComponent', () => {
       'jordan@example.com',
       'Password1',
       'Jordan Stylist',
-      'salon-1',
       'branch-1',
       'Staff'
     );

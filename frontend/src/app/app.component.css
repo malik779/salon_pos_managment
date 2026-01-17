@@ -94,3 +94,34 @@
     margin: 0 0.125rem;
   }
 }
+
+.user-menu-button {
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-left: 0.5rem;
+}
+
+.user-menu-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.user-menu-header {
+  padding: 1rem;
+  min-width: 200px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: #0f172a;
+}
+
+.user-email {
+  font-size: 0.875rem;
+  color: #64748b;
+}

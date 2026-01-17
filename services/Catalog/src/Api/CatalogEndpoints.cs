@@ -8,7 +8,7 @@ public static class CatalogEndpoints
 {
     public static IEndpointRouteBuilder MapCatalogEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/catalog/items");
+        var group = app.MapGroup("/api/catalog/items");
 
         group.MapPost("", async (DefineCatalogItemRequest request, HttpContext context, ISender sender) =>
         {

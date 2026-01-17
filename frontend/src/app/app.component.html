@@ -1,17 +1,38 @@
 <mat-toolbar color="primary" class="main-toolbar">
   <span class="brand">Salon Platform</span>
-  <span class="spacer"></span>
-  <nav class="nav-links">
-    <a
-      *ngFor="let link of navLinks"
-      mat-button
-      [routerLink]="link.path"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-      >{{ link.label }}</a
-    >
-  </nav>
-  <offline-indicator [status]="syncStatus$ | async"></offline-indicator>
+  @if (isAuthenticated()) {
+    <span class="spacer"></span>
+    <nav class="nav-links">
+      @for (link of navLinks; track link.path) {
+        <a
+          mat-button
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          >{{ link.label }}</a
+        >
+      }
+    </nav>
+    <offline-indicator [status]="syncStatus$ | async"></offline-indicator>
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" class="user-menu-button">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <div class="user-menu-header">
+        <div class="user-info">
+          <div class="user-name">{{ userName() }}</div>
+          <div class="user-email">{{ userEmail() }}</div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  } @else {
+    <span class="spacer"></span>
+  }
 </mat-toolbar>
 <div class="content">
   <router-outlet></router-outlet>

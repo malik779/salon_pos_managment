@@ -8,7 +8,7 @@ public static class PosEndpoints
 {
     public static IEndpointRouteBuilder MapPosEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/pos/invoices");
+        var group = app.MapGroup("/api/pos/invoices");
 
         group.MapPost("", async (FinalizeInvoiceRequest request, HttpContext context, ISender sender) =>
         {

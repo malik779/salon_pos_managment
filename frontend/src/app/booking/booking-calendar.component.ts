@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -6,6 +6,7 @@ import { addDays, addMinutes, formatISO } from 'date-fns';
 import { BookingApi } from '../core/api/api-client';
 import { BookingSlot } from '../core/models/domain.models';
 import { IdempotencyService } from '../core/services/idempotency.service';
+import { AuthService } from '@app/core/services/auth.service';
 
 @Component({
   standalone: true,
@@ -42,13 +43,13 @@ import { IdempotencyService } from '../core/services/idempotency.service';
 })
 export class BookingCalendarComponent implements OnInit {
   readonly slots = signal<BookingSlot[]>([]);
-
+  readonly authService = inject(AuthService);
   constructor(private readonly bookingApi: BookingApi, private readonly idempotency: IdempotencyService) {}
 
   ngOnInit(): void {
     const from = formatISO(new Date());
     const to = formatISO(addDays(new Date(), 1));
-    this.bookingApi.getCalendar('00000000-0000-0000-0000-000000000001', from, to).subscribe((slots) => this.slots.set(slots));
+    this.bookingApi.getAll().subscribe((slots) => this.slots.set(slots));
   }
 
   createMockBooking() {

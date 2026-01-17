@@ -8,7 +8,7 @@ public static class ReportsEndpoints
 {
     public static IEndpointRouteBuilder MapReportsEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/reports");
+        var group = app.MapGroup("/api/reports");
 
         group.MapPost("/kpis", async (UpsertDailyTotalsRequest request, HttpContext context, ISender sender) =>
         {

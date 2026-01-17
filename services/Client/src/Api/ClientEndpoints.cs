@@ -8,7 +8,7 @@ public static class ClientEndpoints
 {
     public static IEndpointRouteBuilder MapClientEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/clients");
+        var group = app.MapGroup("/api/clients");
 
         group.MapPost("", async (CreateClientProfileRequest request, HttpContext context, ISender sender) =>
         {

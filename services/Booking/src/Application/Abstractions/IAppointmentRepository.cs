@@ -12,4 +12,5 @@ public interface IAppointmentRepository
     /// Note: For large datasets, consider adding date range filtering
     /// </summary>
     Task<List<Appointment>> GetAllAsync(string? searchTerm, CancellationToken cancellationToken);
+    Task<List<Appointment>> GetCalendarAsync(Guid branchId, DateTime fromUtc, DateTime toUtc, CancellationToken cancellationToken);
 }

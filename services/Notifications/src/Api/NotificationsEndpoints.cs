@@ -8,7 +8,7 @@ public static class NotificationsEndpoints
 {
     public static IEndpointRouteBuilder MapNotificationsEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/notifications");
+        var group = app.MapGroup("/api/notifications");
 
         group.MapPost("/send", async (SendNotificationRequest request, HttpContext context, ISender sender) =>
         {

@@ -8,7 +8,7 @@ public static class StaffEndpoints
 {
     public static IEndpointRouteBuilder MapStaffEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/staff");
+        var group = app.MapGroup("/api/staff");
 
         group.MapPost("", async (RegisterStaffMemberRequest request, HttpContext context, ISender sender) =>
         {
